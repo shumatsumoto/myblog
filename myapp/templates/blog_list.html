@@ -1,6 +1,6 @@
 {% for item in blog_list %}
 	<dl>
-		<dt>{{ item.title }}</dt>
+		<dt><a href="{% url 'blog_detail' item.pk %}">{{ item.title }}</a></dt>
 		<dd>{{ item.content }}</dd>
 	</dl>
 {% endfor %}
