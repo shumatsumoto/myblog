@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Blog
+from django.urls import reverse
 
 
 class BlogList(ListView):
@@ -11,3 +12,12 @@ class BlogList(ListView):
 class BlogDetail(DetailView):
 	template_name = 'myapp/templates/blog_detail.html'
 	model = Blog
+
+
+class BlogCreate(CreateView):
+	template_name = 'myapp/templates/blog_form.html'
+	model = Blog
+	fields = ['title', 'content']
+
+	def get_success_url(self):
+		return reverse('blog_list')
