@@ -1,4 +1,6 @@
 {% for item in blog_list %}
-{{ item.title }}
-{{ item.content }}
+	<dl>
+		<dt>{{ item.title }}</dt>
+		<dd>{{ item.content }}</dd>
+	</dl>
 {% endfor %}
