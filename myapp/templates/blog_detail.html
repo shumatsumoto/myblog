@@ -1,4 +1,6 @@
 <p>{{ object.title }}</p>
 <p>{{ object.content }}</p>
 
-<button onclick="window.history.back()">戻る</button>
+<a href="{% url 'blog_update' object.pk %}">更新</a>
+<a href="{% url 'blog_delete' object.pk %}">削除</a>
+<a href="{% url 'blog_list' %}">戻る</a>
